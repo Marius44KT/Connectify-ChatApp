@@ -1,0 +1,8 @@
+.fx-text-field {
+    -fx-padding: 0.333333em 1em 0.333333em 1em;
+    -fx-border-radius: 15 0 15 0;
+    -fx-background-radius: 15 0 15 0;
+    -fx-background-color: #16FF00;
+    /* top-left, top-right, bottom-right, and bottom-left corners, in that
+    order. */
+}

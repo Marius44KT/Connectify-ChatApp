@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="325.0" prefWidth="725.0" style="-fx-background-color: #3F497F;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.connectify.controller.FriendRequestController">
+   <effect>
+      <Blend />
+   </effect>
+   <children>
+      <TableView fx:id="tableFriendRequestView" onMouseClicked="#handleActivateButtons" layoutY="59.0" prefHeight="266.0" prefWidth="725.0">
+        <columns>
+          <TableColumn fx:id="tableColumnFirstName" prefWidth="323.1999939084053" text="First Name" />
+          <TableColumn fx:id="tableColumnLastName" prefWidth="322.39996337890625" text="Last Name" />
+            <TableColumn fx:id="tableColumnDateSent" prefWidth="322.39996337890625" text="Date Sent" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+         <effect>
+            <Blend />
+         </effect>
+      </TableView>
+      <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="473.0" spacing="8.0" AnchorPane.leftAnchor="10.0">
+         <children>
+            <Button fx:id="acceptFriendRequestButton" onAction="#handleAcceptFriendRequest" mnemonicParsing="false" style="-fx-background-color: #16FF00;" text="Accept friend request" />
+            <Button fx:id="rejectFriendRequestButton" onAction="#handleRejectFriendRequest" mnemonicParsing="false" style="-fx-background-color: #16FF00;" text="Delete friend request" />
+            <TextField fx:id="searchField" onKeyTyped="#handleSearchFriendRequestTextField" promptText="Search user:" />
+            <ImageView fitHeight="19.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/search.png" />
+               </image>
+            </ImageView>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </HBox>
+      <Button onAction="#handleMyAccountButton" layoutX="628.0" layoutY="12.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="92.0" style="-fx-background-color: #ffffff00;" text="My account" textFill="#16ff00">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="34.0" fitWidth="37.0" layoutX="604.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/logo2.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
