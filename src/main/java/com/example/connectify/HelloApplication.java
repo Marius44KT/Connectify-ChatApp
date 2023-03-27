@@ -24,10 +24,10 @@ public class HelloApplication extends Application {
     Validator<Friendship> friendship_validator=new FriendshipValidator();
     Validator<FriendRequest> friend_request_validator=new FriendRequestValidator();
     Validator<Message> message_validator=new MessageValidator();
-    UserDatabaseRepository repo_useri=new UserDatabaseRepository("jdbc:postgresql://localhost:5432/social_network","postgres","aezakmi",validator);
-    FriendshipDatabaseRepository repo_prieteni=new FriendshipDatabaseRepository("jdbc:postgresql://localhost:5432/social_network","postgres","aezakmi",repo_useri,friendship_validator);
-    FriendRequestDatabaseRepository repo_cereri_prietenie=new FriendRequestDatabaseRepository("jdbc:postgresql://localhost:5432/social_network","postgres","aezakmi",repo_useri,friend_request_validator);
-    MessageDatabaseRepository repo_mesaje=new MessageDatabaseRepository("jdbc:postgresql://localhost:5432/social_network","postgres","aezakmi",repo_useri,message_validator);
+    UserDatabaseRepository repo_useri=new UserDatabaseRepository("jdbc:postgresql://localhost:5432/social_network","postgres","postgres",validator);
+    FriendshipDatabaseRepository repo_prieteni=new FriendshipDatabaseRepository("jdbc:postgresql://localhost:5432/social_network","postgres","postgres",repo_useri,friendship_validator);
+    FriendRequestDatabaseRepository repo_cereri_prietenie=new FriendRequestDatabaseRepository("jdbc:postgresql://localhost:5432/social_network","postgres","postgres",repo_useri,friend_request_validator);
+    MessageDatabaseRepository repo_mesaje=new MessageDatabaseRepository("jdbc:postgresql://localhost:5432/social_network","postgres","postgres",repo_useri,message_validator);
     Service service=new Service(validator,repo_useri,repo_prieteni,repo_cereri_prietenie,repo_mesaje);
 
 
